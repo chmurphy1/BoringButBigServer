@@ -15,7 +15,7 @@ public class WorkoutService {
 	WorkoutRepository wRepo;
 	
 	public List<Workout> getWorkoutByLanguage(String lang){
-		return wRepo.findByLanguage(lang);
+		return wRepo.findByIdLanguage(lang);
 	}
 	
 	public List<Workout> getAllWorkouts() {
