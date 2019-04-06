@@ -9,5 +9,5 @@ import com.christopherwmurphy.BoringButBigBackEnd.entities.Workout;
 @Repository
 public interface WorkoutRepository extends CrudRepository<Workout, Integer>{
 
-	public List<Workout> findByIdLanguage(String language);
+	public List<Workout> findByLanguage(String language);
 }
