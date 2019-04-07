@@ -42,8 +42,8 @@ public class ExerciseStepsServiceTest {
 	
 	@Test
 	public void findStepsNotInId() {
-		Set<ExerciseStepsPk> pk =  new HashSet();
-		
+		List<ExerciseStepsPk> pk =  new ArrayList();
+				
 		pk.add(new ExerciseStepsPk(new Integer(1), new Integer(3)));
 		pk.add(new ExerciseStepsPk(new Integer(1), new Integer(4)));
 		

@@ -38,7 +38,7 @@ public class ExerciseStepsService {
 		return st;
 	}
 	
-	public List<ExerciseSteps> getStepsNotInList(Set<ExerciseStepsPk> id){
+	public List<ExerciseSteps> getStepsNotInList(List<ExerciseStepsPk> id){
 		List<ExerciseSteps> list = null;
 		
 		if(id != null && !id.isEmpty()) {

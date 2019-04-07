@@ -10,5 +10,5 @@ import com.christopherwmurphy.BoringButBigBackEnd.entities.keys.ExerciseStepsPk;
 
 public interface ExerciseStepsRepository extends CrudRepository<ExerciseSteps, ExerciseStepsPk>{
 	public List<ExerciseSteps> findByIdExerciseId(int exerciseId);
-	public List<ExerciseSteps> findByIdNotIn(Set<ExerciseStepsPk> id);
+	public List<ExerciseSteps> findByIdNotIn(List<ExerciseStepsPk> id);
 }
