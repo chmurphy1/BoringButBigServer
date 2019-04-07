@@ -1,7 +1,9 @@
 package com.christopherwmurphy.BoringButBigBackEnd.ServiceTest;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,7 +59,7 @@ public class ExerciseServiceTest {
 	
 	@Test
 	public void getExerciseNotInId() {
-		List<Integer> id = new ArrayList<>();
+		Set<Integer> id = new HashSet<>();
 		
 		id.add(new Integer(1));
 		id.add(new Integer(5));

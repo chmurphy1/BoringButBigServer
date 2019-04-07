@@ -1,7 +1,9 @@
 package com.christopherwmurphy.BoringButBigBackEnd.ServiceTest;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +42,7 @@ public class ExerciseStepsServiceTest {
 	
 	@Test
 	public void findStepsNotInId() {
-		List<ExerciseStepsPk> pk =  new ArrayList();
+		Set<ExerciseStepsPk> pk =  new HashSet();
 		
 		pk.add(new ExerciseStepsPk(new Integer(1), new Integer(3)));
 		pk.add(new ExerciseStepsPk(new Integer(1), new Integer(4)));

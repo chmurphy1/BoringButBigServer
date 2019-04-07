@@ -2,6 +2,7 @@ package com.christopherwmurphy.BoringButBigBackEnd.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class SetSchemeService {
 		return schemeList;
 	}
 	
-	public List<SetScheme> getExerciseNotInId(List<Integer> id){
+	public List<SetScheme> getExerciseNotInId(Set<Integer> id){
 		List<SetScheme> ex = null;
 		
 		if((id != null) && (!id.isEmpty())) {

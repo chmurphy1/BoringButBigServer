@@ -1,6 +1,9 @@
 package com.christopherwmurphy.BoringButBigBackEnd.ServiceTest;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.christopherwmurphy.BoringButBigBackEnd.entities.Workout;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.WorkoutPlan;
+import com.christopherwmurphy.BoringButBigBackEnd.entities.keys.WorkoutPlanPk;
 import com.christopherwmurphy.BoringButBigBackEnd.services.WorkoutPlanService;
 
 @RunWith(SpringRunner.class)
@@ -41,5 +45,26 @@ public class WorkoutPlanServiceTest {
 	public void getAllWorkoutPlans() {
 		List<WorkoutPlan> w = wps.getAllWorkoutPlans();
 		assert(!w.isEmpty() == true);
+	}
+	
+	@Test
+	public void findStepsNotInId() {
+		Set<WorkoutPlanPk> pk =  new HashSet();
+		
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1), new Integer(1),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1),new Integer(2), new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1), new Integer(3),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1),new Integer(4), new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1), new Integer(5),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(1),new Integer(6), new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2), new Integer(1),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2),new Integer(2), new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2), new Integer(3),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2),new Integer(4), new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2), new Integer(5),new Integer(1)));
+		pk.add(new WorkoutPlanPk(new Integer(1), new Integer(2),new Integer(6), new Integer(1)));
+		
+		List<WorkoutPlan> steps = wps.getWorkoutPlansNotInList(pk);
+		assert(steps != null && !steps.isEmpty());
 	}
 }

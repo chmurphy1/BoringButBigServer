@@ -2,6 +2,7 @@ package com.christopherwmurphy.BoringButBigBackEnd.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +38,7 @@ public class ExerciseStepsService {
 		return st;
 	}
 	
-	public List<ExerciseSteps> getStepsNotInList(List<ExerciseStepsPk> id){
+	public List<ExerciseSteps> getStepsNotInList(Set<ExerciseStepsPk> id){
 		List<ExerciseSteps> list = null;
 		
 		if(id != null && !id.isEmpty()) {

@@ -2,6 +2,7 @@ package com.christopherwmurphy.BoringButBigBackEnd.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class ExerciseVideosService {
 		return vids;
 	}
 	
-	public List<ExerciseVideos> getExerciseVideosNotInId(List<Integer> id){
+	public List<ExerciseVideos> getExerciseVideosNotInId(Set<Integer> id){
 		List<ExerciseVideos> ex = null;
 		
 		if((id != null) && (!id.isEmpty())) {

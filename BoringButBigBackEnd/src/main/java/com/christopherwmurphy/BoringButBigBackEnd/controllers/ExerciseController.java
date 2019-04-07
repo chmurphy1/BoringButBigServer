@@ -1,6 +1,7 @@
 package com.christopherwmurphy.BoringButBigBackEnd.controllers;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,17 +65,17 @@ public class ExerciseController {
 	}
 	
 	@RequestMapping("/ExerciseByIdNotInList")
-	public List<Exercise> getExercisesByIdNotInList(@RequestParam(value="id") List<Integer> id){
+	public List<Exercise> getExercisesByIdNotInList(@RequestParam(value="id") Set<Integer> id){
 		return es.getExerciseNotInId(id);
 	}
 	
 	@RequestMapping("/ExerciseVideosByIdNotInList")
-	public List<ExerciseVideos> getExercisesVideosByIdNotInList(@RequestParam(value="id") List<Integer> id){
+	public List<ExerciseVideos> getExercisesVideosByIdNotInList(@RequestParam(value="id") Set<Integer> id){
 		return evs.getExerciseVideosNotInId(id);
 	}
 	
 	@RequestMapping("/ExerciseStepsByIdNotInList")
-	public List<ExerciseSteps> getExercisesStepsByIdNotInList(@RequestParam(value="id") List<ExerciseStepsPk> id){
+	public List<ExerciseSteps> getExercisesStepsByIdNotInList(@RequestParam(value="id") Set<ExerciseStepsPk> id){
 		return ess.getStepsNotInList(id);
 	}
 }

@@ -7,7 +7,6 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class WorkoutPlanPk implements Serializable{
-
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="week")
@@ -23,6 +22,14 @@ public class WorkoutPlanPk implements Serializable{
 	private Integer workoutId;
 
 	public WorkoutPlanPk() {
+	}
+	
+	public WorkoutPlanPk(Integer week, Integer planId, Integer seqNum, Integer workoutId) {
+		super();
+		this.week = week;
+		this.planId = planId;
+		this.seqNum = seqNum;
+		this.workoutId = workoutId;
 	}
 	
 	public Integer getWeek() {
