@@ -63,7 +63,7 @@ public class ExerciseServiceTest {
 		id.add(new Integer(5));
 		id.add(new Integer(10));
 		
-		List<Exercise> list= eSer.getExerciseNotInId(id, "en");
+		List<Exercise> list= eSer.getExerciseNotInId(id);
 		assert((list != null) && (!list.isEmpty()));
 	}
 }

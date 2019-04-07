@@ -42,7 +42,7 @@ public class ExerciseService {
 		return exRepo.findByLanguage(lang);
 	}
 	
-	public List<Exercise> getExerciseNotInId(List<Integer> id, String language){
+	public List<Exercise> getExerciseNotInId(List<Integer> id){
 		List<Exercise> ex = null;
 		
 		if((id != null) && (!id.isEmpty())) {
