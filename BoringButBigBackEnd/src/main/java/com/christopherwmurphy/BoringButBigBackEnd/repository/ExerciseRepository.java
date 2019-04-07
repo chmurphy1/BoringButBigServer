@@ -11,4 +11,5 @@ import com.christopherwmurphy.BoringButBigBackEnd.entities.Exercise;
 public interface ExerciseRepository extends CrudRepository<Exercise, Integer>{
 	public Exercise findById(int id);
 	public List<Exercise> findByLanguage(String lang);
+	public List<Exercise> findByIdNotIn(List<Integer> id);
 }

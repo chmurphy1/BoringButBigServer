@@ -1,5 +1,6 @@
 package com.christopherwmurphy.BoringButBigBackEnd.ServiceTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -54,4 +55,15 @@ public class ExerciseServiceTest {
 		assert((ex != null) && (ex.isEmpty()));
 	}
 	
+	@Test
+	public void getExerciseNotInId() {
+		List<Integer> id = new ArrayList<>();
+		
+		id.add(new Integer(1));
+		id.add(new Integer(5));
+		id.add(new Integer(10));
+		
+		List<Exercise> list= eSer.getExerciseNotInId(id, "en");
+		assert((list != null) && (!list.isEmpty()));
+	}
 }

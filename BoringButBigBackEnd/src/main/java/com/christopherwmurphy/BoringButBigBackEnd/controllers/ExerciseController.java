@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.Exercise;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseSteps;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseVideos;
+import com.christopherwmurphy.BoringButBigBackEnd.entities.Workout;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseService;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseStepsService;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseVideosService;
@@ -59,5 +60,10 @@ public class ExerciseController {
 	@RequestMapping("/ExerciseSteps")
 	public List<ExerciseSteps> getExerciseStepsByIdAndLanguage(@RequestParam(value="id") int id){
 		return ess.getExerciseStepsByStepId(id);
+	}
+	
+	@RequestMapping("/ExerciseByIdNotInList")
+	public List<Exercise> getExercisesByIdNotInList(@RequestParam(value="id") List<Integer> id){
+		return es.getExerciseNotInId(id);
 	}
 }

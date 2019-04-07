@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.Exercise;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseVideos;
 import com.christopherwmurphy.BoringButBigBackEnd.repository.ExerciseRepository;
+import com.christopherwmurphy.BoringButBigBackEnd.utilities.Constants;
 
 @Service
 public class ExerciseService {
@@ -39,6 +40,15 @@ public class ExerciseService {
 	
 	public List<Exercise> getExersizeByLang(String lang) {
 		return exRepo.findByLanguage(lang);
+	}
+	
+	public List<Exercise> getExerciseNotInId(List<Integer> id, String language){
+		List<Exercise> ex = null;
+		
+		if((id != null) && (!id.isEmpty())) {
+			ex = exRepo.findByIdNotIn(id);
+		}
+		return ex;
 	}
 	
 }
