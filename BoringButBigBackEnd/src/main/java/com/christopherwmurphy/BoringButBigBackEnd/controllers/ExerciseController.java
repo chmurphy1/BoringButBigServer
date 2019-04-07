@@ -66,4 +66,9 @@ public class ExerciseController {
 	public List<Exercise> getExercisesByIdNotInList(@RequestParam(value="id") List<Integer> id){
 		return es.getExerciseNotInId(id);
 	}
+	
+	@RequestMapping("/ExerciseVideosByIdNotInList")
+	public List<ExerciseVideos> getExercisesVideosByIdNotInList(@RequestParam(value="id") List<Integer> id){
+		return evs.getExerciseVideosNotInId(id);
+	}
 }
