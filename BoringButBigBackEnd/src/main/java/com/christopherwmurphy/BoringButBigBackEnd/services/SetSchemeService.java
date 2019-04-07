@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseVideos;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.SetScheme;
 import com.christopherwmurphy.BoringButBigBackEnd.repository.SetSchemeRepository;
 
@@ -35,5 +36,14 @@ public class SetSchemeService {
 			schemeList.add(s);
 		}
 		return schemeList;
+	}
+	
+	public List<SetScheme> getExerciseNotInId(List<Integer> id){
+		List<SetScheme> ex = null;
+		
+		if((id != null) && (!id.isEmpty())) {
+			ex = ssRepo.findBySetIdNotIn(id);
+		}
+		return ex;
 	}
 }

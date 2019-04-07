@@ -31,6 +31,11 @@ public class WorkoutController {
 		return ws.getExerciseNotInId(id);
 	}
 	
+	@RequestMapping("/SetSchemeByIdNotInList")
+	public List<Workout> getSetSchemeByIdNotInList(@RequestParam(value="id") List<Integer> id){
+		return ws.getExerciseNotInId(id);
+	}
+	
 	@RequestMapping("/WorkoutByLang")
 	public List<Workout> getWorkoutsByLanguage(@RequestParam(value="language") String lang){
 		return ws.getWorkoutByLanguage(lang);
