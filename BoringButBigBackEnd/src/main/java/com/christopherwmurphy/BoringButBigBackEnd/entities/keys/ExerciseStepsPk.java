@@ -9,6 +9,16 @@ public class ExerciseStepsPk implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	public ExerciseStepsPk() {
+		super();
+	}
+	
+	public ExerciseStepsPk(Integer exerciseId, Integer stepSeq) {
+		super();
+		this.exerciseId = exerciseId;
+		this.stepSeq = stepSeq;
+	}
+	
 	@Column(name="exercise_id", insertable=false, updatable=false)
 	private Integer exerciseId;
 

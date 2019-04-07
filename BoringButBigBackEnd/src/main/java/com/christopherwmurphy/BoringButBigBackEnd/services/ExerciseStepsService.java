@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseSteps;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.WorkoutPlan;
+import com.christopherwmurphy.BoringButBigBackEnd.entities.keys.ExerciseStepsPk;
 import com.christopherwmurphy.BoringButBigBackEnd.repository.ExerciseStepsRepository;
 
 @Service
@@ -34,5 +35,15 @@ public class ExerciseStepsService {
 			st.add(s);
 		}
 		return st;
+	}
+	
+	public List<ExerciseSteps> getStepsNotInList(List<ExerciseStepsPk> id){
+		List<ExerciseSteps> list = null;
+		
+		if(id != null && !id.isEmpty()) {
+			list = exsRepo.findByIdNotIn(id);
+		}
+		
+		return list;
 	}
 }

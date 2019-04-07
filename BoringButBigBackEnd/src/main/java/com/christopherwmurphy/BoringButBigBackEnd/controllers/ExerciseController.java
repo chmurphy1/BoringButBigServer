@@ -11,6 +11,7 @@ import com.christopherwmurphy.BoringButBigBackEnd.entities.Exercise;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseSteps;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseVideos;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.Workout;
+import com.christopherwmurphy.BoringButBigBackEnd.entities.keys.ExerciseStepsPk;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseService;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseStepsService;
 import com.christopherwmurphy.BoringButBigBackEnd.services.ExerciseVideosService;
@@ -70,5 +71,10 @@ public class ExerciseController {
 	@RequestMapping("/ExerciseVideosByIdNotInList")
 	public List<ExerciseVideos> getExercisesVideosByIdNotInList(@RequestParam(value="id") List<Integer> id){
 		return evs.getExerciseVideosNotInId(id);
+	}
+	
+	@RequestMapping("/ExerciseStepsByIdNotInList")
+	public List<ExerciseSteps> getExercisesStepsByIdNotInList(@RequestParam(value="id") List<ExerciseStepsPk> id){
+		return ess.getStepsNotInList(id);
 	}
 }
