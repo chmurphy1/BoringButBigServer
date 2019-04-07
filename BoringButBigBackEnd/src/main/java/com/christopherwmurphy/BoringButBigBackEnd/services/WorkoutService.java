@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.christopherwmurphy.BoringButBigBackEnd.entities.Exercise;
 import com.christopherwmurphy.BoringButBigBackEnd.entities.Workout;
 import com.christopherwmurphy.BoringButBigBackEnd.repository.WorkoutRepository;
+import com.christopherwmurphy.BoringButBigBackEnd.utilities.Constants;
 
 @Service
 public class WorkoutService {
@@ -27,5 +29,14 @@ public class WorkoutService {
 			wList.add(s);
 		}
 		return wList;
+	}
+
+	public List<Workout> getExerciseNotInId(List<Integer> id){
+		List<Workout> ex = null;
+		
+		if((id != null) && (!id.isEmpty())) {
+			ex = wRepo.findByWorkoutIdNotIn(id);
+		}
+		return ex;
 	}
 }
