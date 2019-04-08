@@ -5,20 +5,26 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Embeddable
 public class WorkoutPlanPk implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="week")
+	@JsonProperty("week")
 	private Integer week;
 
 	@Column(name="plan_id")
+	@JsonProperty("planId")
 	private Integer planId;
 
 	@Column(name="seq_num")
+	@JsonProperty("seqNum")
 	private Integer seqNum;
 
 	@Column(name="workout_id", insertable=false, updatable=false)
+	@JsonProperty("workoutId")
 	private Integer workoutId;
 
 	public WorkoutPlanPk() {

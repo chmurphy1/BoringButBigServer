@@ -4,15 +4,19 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Embeddable
 public class ExerciseStepsPk implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name="exercise_id", insertable=false, updatable=false)
+	@JsonProperty("exerciseId")
 	private Integer exerciseId;
 
 	@Column(name="step_seq")
+	@JsonProperty("stepSeq")
 	private Integer stepSeq;
 	
 	public ExerciseStepsPk() {
