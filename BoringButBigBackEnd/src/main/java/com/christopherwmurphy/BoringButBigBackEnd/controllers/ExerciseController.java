@@ -75,7 +75,7 @@ public class ExerciseController {
 		return evs.getExerciseVideosNotInId(id);
 	}
 	
-	@GetMapping("/ExerciseStepsByIdNotInList")
+	@RequestMapping("/ExerciseStepsByIdNotInList")
 	public List<ExerciseSteps> getExercisesStepsByIdNotInList(@RequestParam(value="id") List<ExerciseStepsPk> id){
 		return ess.getStepsNotInList(id);
 	}

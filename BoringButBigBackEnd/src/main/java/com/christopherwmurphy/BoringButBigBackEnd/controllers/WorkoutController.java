@@ -39,7 +39,7 @@ public class WorkoutController {
 		return ws.getExerciseNotInId(id);
 	}
 	
-	@GetMapping("/WorkoutPlansByIdNotInList")
+	@RequestMapping("/WorkoutPlansByIdNotInList")
 	public List<WorkoutPlan> getWorkoutPlanByIdNotInList(@RequestParam(value="id") Set<WorkoutPlanPk> id){
 		return wps.getWorkoutPlansNotInList(id);
 	}
