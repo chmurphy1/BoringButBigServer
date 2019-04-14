@@ -34,7 +34,7 @@ public class WorkoutServiceTest {
 	@Test
 	public void WorkoutLanguageIsNull() {
 		List<Workout> ws = wService.getWorkoutByLanguage(null);
-		assert(ws.isEmpty() == false);
+		assert(ws.isEmpty() == true);
 	}
 	
 	@Test
