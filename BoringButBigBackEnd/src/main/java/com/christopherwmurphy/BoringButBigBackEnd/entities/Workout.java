@@ -24,11 +24,15 @@ public class Workout {
 	@Column(name = "language")
 	private String language;
 	
+	@Column(name="primary_lifts")
+	private String lifts;
+	
 	public Workout() {
 		this.workoutId = 0;
 		this.name = Constants.EMPTY;
 		this.language = Constants.EMPTY;
 		this.seqNum = 0;
+		this.lifts = Constants.EMPTY;
 	}
 	
 	public Integer getWorkoutId() {
@@ -56,5 +60,13 @@ public class Workout {
 
 	public void setSeqNum(Integer seqNum) {
 		this.seqNum = seqNum;
+	}
+
+	public String getLifts() {
+		return lifts;
+	}
+
+	public void setLifts(String lifts) {
+		this.lifts = lifts;
 	}
 }
