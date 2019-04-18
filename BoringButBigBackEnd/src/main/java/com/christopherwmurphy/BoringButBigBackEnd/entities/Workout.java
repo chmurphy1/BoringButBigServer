@@ -27,12 +27,20 @@ public class Workout {
 	@Column(name="primary_lifts")
 	private String lifts;
 	
+	@Column(name="period")
+	private Integer period;
+	
+	@Column(name="increments")
+	private String increments;
+	
 	public Workout() {
 		this.workoutId = 0;
 		this.name = Constants.EMPTY;
 		this.language = Constants.EMPTY;
 		this.seqNum = 0;
 		this.lifts = Constants.EMPTY;
+		this.period = 0;
+		this.increments = Constants.EMPTY;
 	}
 	
 	public Integer getWorkoutId() {
@@ -68,5 +76,21 @@ public class Workout {
 
 	public void setLifts(String lifts) {
 		this.lifts = lifts;
+	}
+
+	public Integer getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+	}
+
+	public String getIncrements() {
+		return increments;
+	}
+
+	public void setIncrements(String increments) {
+		this.increments = increments;
 	}
 }
