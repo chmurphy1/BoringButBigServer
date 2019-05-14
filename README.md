@@ -17,3 +17,9 @@ http://christopherwmurphy.us:8080/ExerciseVideosAll
 To get a video by it's id
 http://christopherwmurphy.us:8080/ExerciseVideoId?id=1
 Note: there are 16 videos.  If you want another one, simply change the value of id.
+
+To get a list of all Exercise Steps
+http://christopherwmurphy.us:8080/ExerciseStepsAll
+
+To get a list Exercise Step for a single exercise
+http://christopherwmurphy.us:8080/ExerciseSteps?id=1
