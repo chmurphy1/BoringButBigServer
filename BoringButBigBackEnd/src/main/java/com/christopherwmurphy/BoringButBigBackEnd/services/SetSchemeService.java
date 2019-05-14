@@ -29,13 +29,8 @@ public class SetSchemeService {
 	}
 	
 	public List<SetScheme> getAllSetSchemes() {
-		
-		Iterable<SetScheme> setSchemes = ssRepo.findAll();
-		List<SetScheme> schemeList = new ArrayList();
-		
-		for(SetScheme s: setSchemes) {
-			schemeList.add(s);
-		}
+		List<SetScheme> schemeList = ssRepo.findAllByOrderBySetId();
+
 		return schemeList;
 	}
 	

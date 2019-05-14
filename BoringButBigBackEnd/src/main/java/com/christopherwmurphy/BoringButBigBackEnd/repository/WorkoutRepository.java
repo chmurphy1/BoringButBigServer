@@ -13,4 +13,5 @@ public interface WorkoutRepository extends CrudRepository<Workout, Integer>{
 
 	public List<Workout> findByLanguage(String language);
 	public List<Workout> findByWorkoutIdNotIn(Set<Integer> id);
+	public List<Workout> findAllByOrderBySeqNum();
 }

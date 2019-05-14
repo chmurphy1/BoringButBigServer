@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseSteps;
@@ -28,13 +29,14 @@ public class ExerciseStepsService {
 	}
 
 	public List<ExerciseSteps> getAllExerciseSteps() {
+	
 		
-		Iterable<ExerciseSteps> steps = exsRepo.findAll();
-		List<ExerciseSteps> st = new ArrayList();
-		
+		//Iterable<ExerciseSteps> steps = exsRepo.findAll();
+		List<ExerciseSteps> st = exsRepo.findAll();
+		/*
 		for(ExerciseSteps s: steps) {
 			st.add(s);
-		}
+		}*/
 		return st;
 	}
 	

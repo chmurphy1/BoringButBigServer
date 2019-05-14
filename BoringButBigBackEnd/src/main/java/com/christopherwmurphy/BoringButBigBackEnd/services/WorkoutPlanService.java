@@ -28,13 +28,8 @@ public class WorkoutPlanService {
 	}
 	
 	public List<WorkoutPlan> getAllWorkoutPlans() {
-		
-		Iterable<WorkoutPlan> plans = wpRepo.findAll();
-		List<WorkoutPlan> wp = new ArrayList();
-		
-		for(WorkoutPlan s: plans) {
-			wp.add(s);
-		}
+		List<WorkoutPlan> wp = wpRepo.findAll();
+
 		return wp;
 	}
 	

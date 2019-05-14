@@ -29,13 +29,8 @@ public class ExerciseVideosService {
 	}
 	
 	public List<ExerciseVideos> getAllExerciseVideos() {
+		List<ExerciseVideos> vids = evRepo.findAllByOrderById();
 		
-		Iterable<ExerciseVideos> videos = evRepo.findAll();
-		List<ExerciseVideos> vids = new ArrayList();
-		
-		for(ExerciseVideos s: videos) {
-			vids.add(s);
-		}
 		return vids;
 	}
 	

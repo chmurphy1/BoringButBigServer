@@ -23,13 +23,8 @@ public class WorkoutService {
 	}
 	
 	public List<Workout> getAllWorkouts() {
+		List<Workout> wList = wRepo.findAllByOrderBySeqNum();
 		
-		Iterable<Workout> workouts = wRepo.findAll();
-		List<Workout> wList = new ArrayList();
-		
-		for(Workout s: workouts) {
-			wList.add(s);
-		}
 		return wList;
 	}
 

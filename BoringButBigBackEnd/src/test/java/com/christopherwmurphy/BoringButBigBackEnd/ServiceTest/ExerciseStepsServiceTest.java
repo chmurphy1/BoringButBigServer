@@ -41,6 +41,12 @@ public class ExerciseStepsServiceTest {
 	}	
 	
 	@Test
+	public void findAllTest() {
+		List<ExerciseSteps> steps = ess.getAllExerciseSteps();
+		assert(steps.isEmpty()==false);
+	}
+	
+	@Test
 	public void findStepsNotInId() {
 		List<ExerciseStepsPk> pk =  new ArrayList();
 				

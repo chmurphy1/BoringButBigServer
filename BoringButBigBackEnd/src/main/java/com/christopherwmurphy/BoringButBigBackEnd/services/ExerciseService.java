@@ -29,13 +29,8 @@ public class ExerciseService {
 	}
 	
 	public List<Exercise> getAllExercises() {
+		List<Exercise> exs = exRepo.findAllByOrderById();
 		
-		Iterable<Exercise> ex = exRepo.findAll();
-		List<Exercise> exs = new ArrayList();
-		
-		for(Exercise s: ex) {
-			exs.add(s);
-		}
 		return exs;
 	}
 	

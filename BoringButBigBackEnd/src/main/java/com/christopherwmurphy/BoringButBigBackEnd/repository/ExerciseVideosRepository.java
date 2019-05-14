@@ -12,4 +12,5 @@ import com.christopherwmurphy.BoringButBigBackEnd.entities.ExerciseVideos;
 public interface ExerciseVideosRepository extends CrudRepository<ExerciseVideos, Integer>{
 	public ExerciseVideos findById(int id);
 	public List<ExerciseVideos> findByIdNotIn(Set<Integer> id);
+	public List<ExerciseVideos> findAllByOrderById();
 }
