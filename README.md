@@ -8,5 +8,5 @@ http://christopherwmurphy.us:8080/ExerciseId?id=1
 Note: there are only 16 exercises.
 
 To get a list of exercise by language
-http://christopherwmurphy.us:8080/ExerciseLang?language=en
+http://christopherwmurphy.us:8080/ExerciseLang?language=en \n
 Note: only English is supported, Spanish will be added in the future.
